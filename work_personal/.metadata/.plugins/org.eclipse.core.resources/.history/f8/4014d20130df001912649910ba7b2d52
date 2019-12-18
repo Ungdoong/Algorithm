@@ -1,8 +1,0 @@
-package algorithm;
-
-public class Hash {
-	private class Entry{
-		private int value;
-		public Entry next;
-	}
-}

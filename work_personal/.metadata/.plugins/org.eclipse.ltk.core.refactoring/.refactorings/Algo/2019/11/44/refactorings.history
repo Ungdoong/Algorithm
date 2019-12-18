@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;programmers.Solution_PG_lv2_아이언슈트&apos; to &apos;Solution_PG_lv2_점프와순간이동&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;programmers.Solution_PG_lv2_아이언슈트&apos;&#x0D;&#x0A;- Renamed element: &apos;programmers.Solution_PG_lv2_점프와순간이동&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Solution_PG_lv2_아이언슈트&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;programmers{Solution_PG_lv2_아이언슈트.java[Solution_PG_lv2_아이언슈트" matchStrategy="1" name="Solution_PG_lv2_점프와순간이동" qualified="false" references="true" similarDeclarations="false" stamp="1572572490672" textual="false" version="1.0"/>
-</session>

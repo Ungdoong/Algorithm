@@ -1,9 +1,0 @@
-package algorithm;
-
-import java.io.FileInputStream;
-
-public class KMP {
-	public static void main(String[] args) throws Exception{
-		System.setIn(new FileInputStream("res/input_d3_1213.txt"));
-	}
-}

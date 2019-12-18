@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;d4.Solution_d4_3074_입국심사_서울8반_정택진&apos; to &apos;Solution_D4_3074_입국심사_서울8반_정택진&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;d4.Solution_d4_3074_입국심사_서울8반_정택진&apos;&#x0D;&#x0A;- Renamed element: &apos;d4.Solution_D4_3074_입국심사_서울8반_정택진&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Solution_d4_3074_입국심사_서울8반_정택진&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;d4{Solution_d4_3074_입국심사_서울8반_정택진.java[Solution_d4_3074_입국심사_서울8반_정택진" matchStrategy="1" name="Solution_D4_3074_입국심사_서울8반_정택진" qualified="false" references="true" similarDeclarations="false" stamp="1569893327146" textual="false" version="1.0"/>
-</session>
