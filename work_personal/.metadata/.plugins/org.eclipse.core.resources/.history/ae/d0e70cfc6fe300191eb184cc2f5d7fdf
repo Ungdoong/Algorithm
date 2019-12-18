@@ -1,0 +1,64 @@
+package d4;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution_d4_3074_입국심사_서울8반_정택진 {
+
+	public static void main(String[] args) throws Exception{
+		System.setIn(new FileInputStream("res/input_d4_3074.txt"));
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int T=Integer.parseInt(br.readLine());
+		
+		for(int tc=1; tc<=T; tc++) {
+			StringTokenizer st=new StringTokenizer(br.readLine());
+			int N=Integer.parseInt(st.nextToken());
+			long M=Long.parseLong(st.nextToken())-N;
+			int[] table = new int[N];
+			int[] time = new int[N];
+			long min = Long.MAX_VALUE/2;
+			for(int i=0; i<N; i++) {
+				table[i] = Integer.parseInt(br.readLine());
+				time[i] = table[i];
+				min = Math.min(min, time[i]);
+			}
+			
+			int result = 0;
+			while(M > 0) {
+				result += min;
+				int zero_count = 0;
+				for(int i=0; i<N; i++) {
+					time[i] -= min;
+					if(time[i] == 0)	zero_count++;
+				}
+				
+				if(zero_count < M) {
+					min = Long.MAX_VALUE/2;
+					for(int i=0; i<N; i++) {
+						if(time[i] == 0) time[i] = table[i];
+						min = Math.min(min, time[i]);
+					}
+				}else if(zero_count > M){
+					while(M > 0) {
+						long temp_min = Long.MAX_VALUE/2;
+						int min_index = -1;
+						for(int i=0; i<N; i++) {
+							if(temp_min > time[i] + table[i]) {
+								temp_min = time[i] + table[i];
+								min_index = i;
+							}
+						}
+						time[min_index] = table[min_index];
+						M--;
+					}
+					
+					long temp_max = 0;
+					for(int i=0; i<N; i++)
+				}
+			}
+		}
+	}
+
+}

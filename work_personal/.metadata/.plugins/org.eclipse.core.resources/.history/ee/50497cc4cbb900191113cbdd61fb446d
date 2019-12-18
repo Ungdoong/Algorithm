@@ -1,0 +1,52 @@
+package d5;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Solution_d5_1242_암호코드스캔_서울8반_정택진 {
+	public static final String[] numbers= {"0001101","0011001","0010011"
+			,"0111101","0100011","0110001","0101111","0111011","0110111","0001011"};
+	public static String[] numbers2=new String[10];
+	public static void main(String[] args) throws Exception{
+		System.setIn(new FileInputStream("res/input_d5_1242.txt"));
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
+		int T=Integer.parseInt(br.readLine());
+
+		StringBuilder sb;
+		for(int i=0; i<numbers2.length; i++) {
+			sb=new StringBuilder();
+			for(int j=0; j<7; j++) {
+				sb.append(numbers[i].charAt(j))
+				  .append(numbers[i].charAt(j));
+			}
+			numbers2[i]=sb.toString();
+		}
+		
+		for(int tc=1; tc<=T; tc++) {
+			StringTokenizer st=new StringTokenizer(br.readLine());
+			int Y=Integer.parseInt(st.nextToken());
+			int X=Integer.parseInt(st.nextToken());
+			
+			//codes 리스트에 코드 삽입
+			ArrayList<String> codes= new ArrayList<String>();
+			Pattern p=Pattern.compile("([1-9])");
+			Matcher m;
+			for(int i=0; i<Y; i++) {
+				String s=br.readLine();
+				m = p.matcher(s);
+				if(m.find() && !codes.contains(s))
+					codes.add(s);
+			}
+			
+			System.out.println(codes);
+		}
+	}
+}

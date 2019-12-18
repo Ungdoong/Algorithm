@@ -1,0 +1,48 @@
+package d3;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution_d3_1240_단순2진암호코드_서울8반_정택진 {
+	public static final String[] numbers= {"0001101","0011001","0010011"
+			,"0111101","0100011","0110001","0101111","0111011","0110111","0001011"}; 
+	public static void main(String[] args) throws Exception {
+		System.setIn(new FileInputStream("res/input_d3_1240.txt"));
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int T=Integer.parseInt(br.readLine());
+		
+		for(int tc=1; tc<=T; tc++) {
+			StringTokenizer st=new StringTokenizer(br.readLine());
+			StringBuilder sb=new StringBuilder();
+			int Y=Integer.parseInt(st.nextToken());
+			int X=Integer.parseInt(st.nextToken());
+			
+			int[] code=new int[8]; int count=0; 
+			boolean flag=false;
+			for(int i=0; i<Y; i++) {
+				String[] line=br.readLine().split("");
+				for(int j=0; j<X; j++) {
+					sb.append(line[j]);
+					if(sb.length()>7) sb.delete(0, 1);
+					for(int k=0; k<numbers.length; k++) {
+						if(sb.toString().equals(numbers[k])) {
+							code[count++] = k;
+							j+=7;
+						}
+					}
+					if(count==7) { flag=true; break; }
+				}
+				if(flag) break;
+			}
+			
+			//유효성 검사
+			int sum1=0; int sum2=0;
+			for(int i=0; i<8; i++) {
+				if(i%2==1)	sum1+=code[i];
+				else		sum2+=code[i];
+			}
+		}
+	}
+}

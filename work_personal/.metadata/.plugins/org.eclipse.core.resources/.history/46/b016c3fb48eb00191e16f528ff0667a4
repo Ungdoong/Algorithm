@@ -1,0 +1,15 @@
+package programmers;
+
+public class Solution_PG_lv2_124나라 {
+
+	public static String solution(int n) {
+		StringBuilder sb = new StringBuilder();
+		
+		
+		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution(548710));
+	}
+}

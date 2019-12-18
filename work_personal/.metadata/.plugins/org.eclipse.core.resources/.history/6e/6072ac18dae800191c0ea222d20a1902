@@ -1,0 +1,32 @@
+package baekjoon;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main_백준_17472_다리만들기2_서울8반_정택진 {
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		N=Integer.parseInt(st.nextToken());
+		M=Integer.parseInt(st.nextToken());
+		int[] red=new int[2];
+		int[] blue=new int[2];
+		char[][] map=new char[N][M];
+		for(int i=0; i<N; i++) {
+			String line=br.readLine();
+			for(int j=0; j<M; j++) {
+				map[i][j] = line.charAt(j);
+				if(map[i][j] == 'R') { red[0] = i; red[1] = j; }
+				else if(map[i][j] == 'B') { blue[0] = i; blue[1] = j; }
+			}
+		}
+		result = Integer.MAX_VALUE/2;
+		process(map, red, blue, 0);
+		
+		if(result == Integer.MAX_VALUE/2)	result = -1;
+		System.out.println(result);
+	}
+}

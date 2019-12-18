@@ -1,0 +1,21 @@
+package d4;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution_D4_3289_서로소집합_서울8반_정택진 {
+
+	public static void main(String[] args) throws Exception{
+		System.setIn(new FileInputStream("res/input_d4_3289.txt"));
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int T=Integer.parseInt(br.readLine());
+		
+		for(int tc=1; tc<=T; tc++) {
+			StringTokenizer st=new StringTokenizer(br.readLine());
+			int N=Integer.parseInt(st.nextToken());
+			int =Integer.parseInt(st.nextToken());
+		}
+	}
+}

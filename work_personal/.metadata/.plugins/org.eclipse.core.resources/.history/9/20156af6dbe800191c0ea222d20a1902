@@ -1,0 +1,78 @@
+package baekjoon;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Main_백준_17472_다리만들기2_서울8반_정택진 {
+	public static final int dx[] = {0, 0, -1, 1};
+	public static final int dy[] = {-1, 1, 0, 0};
+	public static int H, W, map[][];
+	public static boolean visit[][];
+	
+	public static void masking(int index, int cx, int cy) {
+		for(int d=0; d<4; d++) {
+			int ny = cy + dy[d];
+			int nx = cx + dx[d];
+			if(nx<0 || nx>=W || ny<0 || ny>=H)	continue;
+			if(map[ny][nx] == 1) {
+				map[ny][nx] = index;
+				masking(index, nx, ny);
+			}
+		}
+	}
+	
+	public static void findBridge(int cx, int cy) {
+		for(int d=0; d<4; d++) {
+			int ny = cy + dy[d];
+			int nx = cx + dx[d];
+			if(nx<0 || nx>=W || ny<0 || ny>=H)	continue;
+			if(map[ny][nx] == 0) {
+				
+			}
+			else if(!visit[ny][nx] && map[ny][nx] == 1) {
+				visit[ny][nx] = true;
+				findBridge(nx, ny);
+			}
+		}
+	}
+	
+	public static void main(String[] args) throws Exception{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		H=Integer.parseInt(st.nextToken());
+		W=Integer.parseInt(st.nextToken());
+		map = new int[H][W];
+		for(int i=0; i<H; i++) {
+			st = new StringTokenizer(br.readLine());
+			for(int j=0; j<W; j++) {
+				map[i][j] = Integer.parseInt(st.nextToken());
+			}
+		}
+		
+		//섬 넘버링
+		int index = 0;
+		for(int i=0; i<H; i++) {
+			for(int j=0; j<W; j++) {
+				if(map[i][j] == 1) {
+					index += 10;
+					map[i][j] = index;
+					masking(index, j, i);
+				}
+			}
+		}
+		
+		//간선 구하기
+		visit = new boolean[H][W];
+		for(int i=0; i<H; i++) {
+			for(int j=0; j<W; j++) {
+				if(map[i][j] != 0) {
+					visit[i][j] = true;
+				}
+			}
+		}
+	}
+}

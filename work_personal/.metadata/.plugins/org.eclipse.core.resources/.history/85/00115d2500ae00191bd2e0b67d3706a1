@@ -1,0 +1,41 @@
+package algorithm;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+public class KMP {
+	public static int[] getPi(String pattern) {
+		int M=pattern.length();
+		int j=0;
+		char[] p=new char[M];
+		int[] pi=new int[M];
+		
+		p=pattern.toCharArray();
+	}
+	public static int kmp(String str, String pattern) {
+		int result=0;
+		int[] pi=getPi(pattern);
+		int N=str.length();
+		int M=pattern.length();
+		char[] s=str.toCharArray();
+		char[] p=pattern.toCharArray();
+		
+		for(int i=0; i<n; i++) {
+			while( j>0 && s[i] != p[j] )
+		}
+	}
+	
+	public static void main(String[] args) throws Exception{
+		System.setIn(new FileInputStream("res/input_d3_1213.txt"));
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		
+		for(int tc=1; tc<=10; tc++) {
+			br.readLine();
+			String pattern=br.readLine();
+			String str=br.readLine();
+			
+			System.out.println("#"+tc+" "+kmp(str, pattern));
+		}
+	}
+}

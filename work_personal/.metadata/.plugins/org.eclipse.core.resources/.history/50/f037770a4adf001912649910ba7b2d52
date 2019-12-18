@@ -1,0 +1,21 @@
+package algorithm;
+
+public class LinkedList {
+	private Node node;
+	private Node tail;
+	private int size = 0;
+	private class Node{
+		private Object data;
+		private Node next;
+		public Node(Object data){
+			this.data = data;
+			this.next = null;
+		}
+	}
+	
+	public void addFirst(Object input) {
+		Node newNode = new Node(input);
+		
+		this.tail.next = newNode;
+	}
+}

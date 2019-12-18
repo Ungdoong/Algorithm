@@ -1,0 +1,29 @@
+package algorithm;
+
+public class Hash {
+	private class Entry{
+		private int value;
+		public Entry next;
+	}
+	
+	private int size;
+	private Entry[] hTable;
+	
+	public Hash(int size) {
+		this.size = size;
+		this.hTable = new Entry[size];
+	}
+	
+	public int hashMethod(int key) {
+		return key % size;
+	}
+	
+	public int getKey(int data) {
+		return ((Object)data).hashCode();
+	}
+	
+	public int add(int data) {
+		int key = getKey(data);
+		int hashValue = hashMethod(key);
+	}
+}

@@ -1,0 +1,57 @@
+package d5;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class Solution_d5_1242_암호코드스캔_서울8반_정택진 {
+	public static void main(String[] args) throws Exception{
+		System.setIn(new FileInputStream("res/input_d5_1242.txt"));
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
+		int T=Integer.parseInt(br.readLine());
+
+		for(int tc=1; tc<=T; tc++) {
+			StringTokenizer st=new StringTokenizer(br.readLine());
+			int Y=Integer.parseInt(st.nextToken());
+			int X=Integer.parseInt(st.nextToken());
+			
+			//sb에 16진수 암호코드 입력
+			StringBuilder sb=new StringBuilder();
+			int start_index=0; int end_index=0;
+			for(int i=0; i<Y; i++) {
+				String line=br.readLine();
+				if(sb.length() == 0) {
+					for(int j=0; j<line.length; j++) {
+						if(!line.charAt(j).equals("0")) {
+							if(start_index == 0)	start_index = j;
+							if(end_index < j)		end_index = j;
+						}
+					}
+					if(start_index != 0)
+						for(int j=start_index; j<=end_index; j++)
+							sb.append(line[j]);
+				}
+			}
+			
+			System.out.println("#"+tc+" "	+sb.toString());
+//			//2진수 스트링으로 변환
+//			StringBuilder sb2=new StringBuilder();
+//			int len=sb.length()/16;
+//			for(int i=0; i<=len; i++) {
+//				if(i==len)
+//					sb2.append(Long.toBinaryString(Long.parseLong(
+//							sb.toString().substring(i*16,sb.length()), 16)));
+//				else {
+//					System.out.println(sb.toString().substring(i*16,(i+1)*16));
+//					sb2.append(Long.toBinaryString(Long.parseLong(
+//						sb.toString().substring(i*16,(i+1)*16), 16)));
+//				}
+//			}
+//			System.out.println(sb2.toString());
+		}
+	}
+}
