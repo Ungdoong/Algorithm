@@ -24,11 +24,8 @@ function solution(key, lock) {
 function lotateRight(arr) {
   const N = arr.length;
 
-  let result_arr = [
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-  ];
+  let result_arr = Array(N);
+  for(let i =0; i<N; i++) result_arr[i] = Array(N)
   for (let i = 0; i < N; i++) {
     for (let j = 0; j < N; j++) {
       result_arr[j][N - i - 1] = arr[i][j];
@@ -79,15 +76,28 @@ function check(lock, key, dy, dx, M) {
 
 let sol = solution(
   [
-    [0, 0, 0],
     [1, 0, 0],
-    [0, 1, 1],
+    [0, 0, 0],
+    [0, 0, 0],
   ],
   [
     [1, 1, 1],
-    [1, 1, 0],
+    [1, 1, 1],
     [1, 0, 1],
   ]
 );
+
+// let sol = solution(
+//   [
+//     [0, 0, 0],
+//     [1, 0, 0],
+//     [0, 1, 1],
+//   ],
+//   [
+//     [1, 1, 1],
+//     [1, 1, 0],
+//     [1, 0, 1],
+//   ]
+// );
 
 console.log(sol);
