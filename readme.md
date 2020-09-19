@@ -11,3 +11,5 @@ SWEA - https://swexpertacademy.com/main/main.do
 정올 - http://www.jungol.co.kr/
 
 프로그래머스 - https://programmers.co.kr/
+
+알고리즘 정리 노션 - https://www.notion.so/2a547d7dbbb5418f99e1683b3f1441e9
