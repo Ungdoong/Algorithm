@@ -5,13 +5,32 @@ const DEL = 1;
 
 function solution(n, build_frame) {
   let map = Array(n + 1);
-  for (let row of map) row = Array.from({ length: n + 1 }, [false, false]);
+  for (let i=0; i<n+1; i++) map[i] = Array.from({ length: n + 1 }, () => [false, false]);
 
-  for (let i = 0; i <= n; i++) {
-    for (let j = 0; j <= n; j++) {
-      console.log(map[j][i]+' ')
+  for(const build of build_frame){
+    const [x, y, what, how] = build
+    
+    if(how == CON)  map[y][x][what] = true
+    else  map[y][x][what] = false
+
+
+  }
+}
+
+function check(map, n){
+  for(let y=0; y<n+1; y++){
+    for(let x=0; x<n+1; x++){
+      // 기둥 체크
+      if(map[y][x][0]){
+        if(y != 0 && !map[y-1][x][0] && !map[y-1][x][1])  return false 
+      }
+
+      // 보 체크
+      if(map[y][x][1]){
+        const right = x + 1
+        const left = y - 1
+      }
     }
-    console.log('\n')
   }
 }
 
