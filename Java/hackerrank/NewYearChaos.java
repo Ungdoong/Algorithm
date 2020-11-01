@@ -1,9 +1,6 @@
-package hackerrank;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class NewYearChaos {
 	// 1 2 3 4 5 6 7 8
@@ -32,7 +29,7 @@ public class NewYearChaos {
 		int result = 0;
 		while (incorrect > 0) {
 			for (int i = 0; i < N - 1; i += 1) {
-				// Á¦ ÀÚ¸®°¡ ¾Æ´Ï°í ÇØ´ç °ªÀÌ µÚÀÇ °ªº¸´Ù Å¬ ¶§
+				// ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½Æ´Ï°ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ ï¿½ï¿½
 				if (q[i] != (i + 1) && q[i] > q[i + 1]) {
 					int change = (q[i + 1] == (i + 2)) ? 1 : 0;
 
